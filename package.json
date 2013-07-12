@@ -1,0 +1,29 @@
+{
+  "name": "cozy-remotestorage",
+  "version": "0.0.1",
+  "description": "Use your cozy as a RemoteStorage Server.",
+  "main": "server.coffee",
+  "dependencies": {
+    "jugglingdb": "~0.2.0-25",
+    "jugglingdb-cozy-adapter": "~0.3.3",
+    "express": "~3.1.0",
+    "jade": "~0.32.0"
+  },
+  "devDependencies": {
+    "chai": "~1.5.0",
+    "request-json": "=0.3.0",
+    "mocha": "~1.9.0",
+    "coffee-script": "*"
+  },
+  "repository": "https://github.com/mycozycloud/cozy-remotestorage",
+  "author": "Romain M. Foucault",
+  "readmeFilename": "README.md",
+  "cozy-permissions": {
+    "RemoteStoragePermission": {
+      "description": "Permissions granted to unhosted apps"
+    },
+    "RemoteStorageDocument": {
+      "description": "A Document stored in your remote storage"
+    }
+  }
+}

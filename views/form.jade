@@ -1,0 +1,24 @@
+!!!
+
+html
+  head
+    title Authorize
+  body
+
+    p The application
+      span.clientid= client_id
+      | hosted at
+      span.host= redirect_uri
+      | wants to access
+
+      ul
+        each permission in permissions
+          li= permission.path
+            span.rights= permission.rights
+
+    form(action="", method="post")
+      input(type="hidden", name="client_id", value=client_id)
+      input(type="hidden", name="scope", value=scope)
+      input(type="hidden", name="redirect_uri", value=redirect_uri)
+      input(type="submit", name="allow", value="Allow")
+      input(type="submit", name="deny", value="Deny")
