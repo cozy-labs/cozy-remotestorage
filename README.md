@@ -1,3 +1,6 @@
+cozy-remote-storage
+===================
+
 # Description
 
 A cozy app that act as a Remote Storage server
