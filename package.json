@@ -16,8 +16,8 @@
   },
   "cozy-permissions": {
     "RemoteStorageDoc": "Store your remotestorage documents",
-    "RemoteStoragePerm": "Store your remotestorage permissions",
+    "RemoteStoragePerm": "Store your remotestorage permissions"
   },
   "cozy-displayName": "remotestorage",
-  "icon-path": "./icon.png"
+  "icon-path": "icon.png"
 }
