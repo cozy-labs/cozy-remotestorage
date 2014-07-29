@@ -1,0 +1,23 @@
+{
+  "name": "cozy-remotestorage",
+  "desc": "Remotestorage server in cozy",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cozy/cozy-remotestorage/"
+  },
+  "homepage": "https://github.com/cozy/cozy-remotestorage/",
+  "dependencies": {
+    "americano": "0.3.7",
+    "americano-cozy": "0.2.6",
+    "node-static": "0.7.x",
+    "remotestorage-server": "0.5.9"
+  },
+  "cozy-permissions": {
+    "RemoteStorageDoc": "Store your remotestorage documents",
+    "RemoteStoragePerm": "Store your remotestorage permissions",
+  },
+  "cozy-displayName": "remotestorage",
+  "icon-path": "./icon.png"
+}
