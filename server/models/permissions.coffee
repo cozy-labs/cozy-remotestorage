@@ -35,7 +35,7 @@ RemoteStoragePerm.createToken = (scopePaths, details, callback) ->
         if doc
             console.log doc
             # because we create the token immediately, we have to confirm every time
-            callback doc.value, true
+            callback doc.key, true
         else
             require('crypto').randomBytes 48, (ex, buf) ->
                 token = buf.toString('hex')
