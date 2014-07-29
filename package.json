@@ -19,5 +19,5 @@
     "RemoteStoragePerm": "Store your remotestorage permissions"
   },
   "cozy-displayName": "remotestorage",
-  "icon-path": "./icon.png"
+  "icon-path": "icon.png"
 }
