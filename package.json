@@ -15,8 +15,12 @@
     "remotestorage-server": "0.5.9"
   },
   "cozy-permissions": {
-    "RemoteStorageDoc": "Store your remotestorage documents",
-    "RemoteStoragePerm": "Store your remotestorage permissions"
+    "RemoteStorageDoc": {
+      "description": "Store your remotestorage documents"
+    },
+    "RemoteStoragePerm": {
+      "description": "Store your remotestorage permissions"
+    }
   },
   "cozy-displayName": "remotestorage",
   "icon-path": "icon.png"
