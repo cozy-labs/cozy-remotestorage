@@ -29,7 +29,7 @@ module.exports =
                     <td>#{perm.details.redirectUri}</td>
                     <td><ul>#{rights.join('')}</ul></td>
                     <td>
-                        <a class="use" target="_top" href="#{perm.details.redirectUri}">Use</a>
+                        <a class="use" target="_top" href="#{perm.details.redirectUri}">Run</a>
 
                     </td><td>
                         <a class="delete" href="revoke?id=#{perm._id}">&times;</a>
@@ -51,25 +51,25 @@ module.exports =
                                 body {
                                     font-family: main;
                                 }
-                                thead{
+                                thead {
                                     background-color: #54a6ff;
                                     color: white;
                                 }
-                                table, table td{
+                                table, table td {
                                     border: 1px solid #54a6ff;
                                     border-collapse: collapse;
                                 }
-                                td, th{
+                                td, th {
                                     padding: 15px;
                                 }
-                                a.use{
+                                a.use {
                                     background-color: #54a6ff;
                                     color: white;
                                     text-decoration: none;
                                     display: inline-block;
-                                    padding: 0em 0.5em;
+                                    padding: 0.5em 0.5em;
                                 }
-                                a.delete{
+                                a.delete {
                                     background-color: red;
                                     color: white;
                                     text-decoration: none;
@@ -77,7 +77,7 @@ module.exports =
                                     border-radius: 0.5em;
                                     padding: 0em 0.5em;
                                 }
-                                a:hover{
+                                a:hover {
                                     background-color: orange;
                                 }
 
