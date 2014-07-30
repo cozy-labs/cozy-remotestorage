@@ -22,7 +22,7 @@
       "description": "Store your remotestorage permissions"
     },
     "CozyInstance": {
-      "description": "Read your cozy's url to generate help"
+      "description": "Read your cozy's url to generate you remote storage id"
     }
   },
   "cozy-displayName": "remotestorage",
