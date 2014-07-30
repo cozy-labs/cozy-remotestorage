@@ -44,6 +44,13 @@ module.exports =
                                 window.location = window.location.toString().replace('#oauth', 'oauth')
                         </script>
                         <style>
+                                @font-face {
+                                    font-family: main;
+                                    src: url(/fonts/maven-pro-light-200.otf);
+                                }
+                                body {
+                                    font-family: main;
+                                }
                                 thead{
                                     background-color: #54a6ff;
                                     color: white;
