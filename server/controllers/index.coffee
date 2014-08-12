@@ -54,15 +54,25 @@ module.exports =
                             <style>
                                     body {
                                         font-family: "Helvetica Neue", Helvetica;
-                                        background: #E9E9E9;
+                                        background: #FAFAFA;
                                         padding: 0;
                                         margin: 0;
                                     }
                                     header {
-                                        padding: 10px;
+                                        padding: 10px 0;
                                         width: 100%;
                                         background-color: #42403D;
                                         height: 60px;
+                                    }
+                                    h2:first-child {
+                                        margin-top: 0;
+                                    }
+                                    .explaination {
+                                        width: 100%;
+                                        background: #E9E9E9;
+                                        padding-top: 20px;
+                                        padding-bottom: 20px;
+                                        margin-bottom: 20px;
                                     }
                                     .content {
                                         max-width: 960px;
@@ -98,13 +108,12 @@ module.exports =
                                     a.use {
                                         background-color: #c4baab;
                                         color: #42403D;
-                                        color: white;
                                         text-decoration: none;
                                         display: inline-block;
                                         padding: 0.5em 0.5em;
                                         border-radius: 2px;
                                     }
-                                    a.delete {
+                                    a {
                                         color: #42403D;
                                     }
                                     td.revoke {
@@ -132,14 +141,18 @@ module.exports =
                         </div>
                         </p>
                         </header>
+                        <div class="explaination">
                         <div class="content">
                         <h2>What is Remote Storage</h2>
                         <p>
                         Remote Storage is a technology that allows web
 applications to let the user chose the location of their storage.
 That way, users can keep their data in a place of their own. To use that kind of
-web apps it requires you have a storage somewhere. This application allows your
-Cozy to store data as a Remote Storage.
+web apps it requires you have a storage somewhere that respects the Remote
+Storage standard. Good news, this is what the current application does: it
+turns your Cozy into a Remote Storage!
+</p>
+<p>
 Here is
 <a href="https://unhosted.org/apps/">a list of compatible applications</a>.
 </p>
@@ -159,6 +172,9 @@ you will be able to use the application and persist data in your Cozy.
 Below you will find the list of applications that you authorize to connect to
 your remote storage.
 </p>
+                        </div>
+                        </div>
+                        <div class="content">
                         <table>
                         <thead>
                         <tr>
