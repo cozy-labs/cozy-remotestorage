@@ -89,6 +89,11 @@ module.exports =
                                     }
                                     .header-content p {
                                         margin: 0;
+                                        padding-top: 10px;
+                                        font-size: 26px;
+                                    }
+                                    .header-content span {
+                                        font-weight: bold;
                                     }
                                     thead {
                                         background-color: #42403D;
@@ -138,7 +143,7 @@ module.exports =
                         <div class="header-content content">
                             <img src="icon.png" alt="Remote Storage Logo" />
                             <p>
-                            Your Remote Storage id is me@#{instance.domain}
+                            Your Remote Storage id is <span>me@#{instance.domain}</span>
                             </p>
                         </div>
                         </p>
@@ -169,14 +174,14 @@ floating on one corner of the application. The box looks like this:<br>
 The application will require for an authorization. Once you will accept,
 you will be able to use the application and persist data in your Cozy.
 </p>
+                        </div>
+                        </div>
+                        <div class="content">
 <h2>Application list</h2>
 <p>
 Below you will find the list of applications that you authorize to connect to
 your remote storage.
 </p>
-                        </div>
-                        </div>
-                        <div class="content">
                         <table>
                         <thead>
                         <tr>
