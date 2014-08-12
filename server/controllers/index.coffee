@@ -37,7 +37,7 @@ module.exports =
                         <td><ul>#{rights.join('')}</ul></td>
 
                         </td><td>
-                            <a class="delete" href="revoke?id=#{perm._id}">&times;</a>
+                            <a class="delete" href="revoke?id=#{perm._id}">revoke</a>
                         </td></tr>
                         """
 
@@ -94,22 +94,24 @@ module.exports =
                                         padding: 15px;
                                     }
                                     a.use {
-                                        background-color: #54a6ff;
+                                        background-color: ;
                                         color: white;
                                         text-decoration: none;
                                         display: inline-block;
                                         padding: 0.5em 0.5em;
                                     }
                                     a.delete {
-                                        background-color: red;
-                                        color: white;
+                                        font-weight: bold;
                                         text-decoration: none;
-                                        display: inline-block;
-                                        border-radius: 0.5em;
-                                        padding: 0em 0.5em;
                                     }
-                                    a:hover {
-                                        background-color: orange;
+                                    a.use:hover {
+                                        background-color: #E94809;
+                                    }
+                                    a.delete:hover {
+                                        background-color: #E94809;
+                                    }
+                                    ul {
+                                        list-style-type:
                                     }
 
                                 </style>
