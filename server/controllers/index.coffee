@@ -93,13 +93,14 @@ module.exports =
                                     td, th {
                                         padding: 15px;
                                     }
-                                    a {
-                                        background-color: #F94819;
+                                    a.use {
+                                        background-color: #42403D;
                                         color: #42403D;
                                         color: white;
                                         text-decoration: none;
                                         display: inline-block;
                                         padding: 0.5em 0.5em;
+                                        border-radius: 2px;
                                     }
                                     a.delete {
                                         color: #42403D;
