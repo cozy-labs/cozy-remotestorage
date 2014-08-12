@@ -29,13 +29,13 @@ module.exports =
 
                         redirectURI =
                             """<tr>
-                            <td>#{perm.details.clientId}</td>
-                            <td>
+                            <td class="client-id">#{perm.details.clientId}</td>
+                            <td class="application">
                                 <a class="use" target="_blank" href="#{perm.details.redirectUri}">
                                 #{perm.details.redirectUri}
                                 </a>
                             </td>
-                            <td><ul>#{rights.join('')}</ul></td>
+                            <td class="permission"><ul>#{rights.join('')}</ul></td>
                             <td class="revoke">
                                 <a class="delete" href="revoke?id=#{perm._id}">revoke</a>
                             </td></tr>
@@ -56,14 +56,14 @@ module.exports =
                                     body {
                                         font-family: "Helvetica Neue", Helvetica;
                                         background: #FAFAFA;
-                                        padding: 0;
+                                        padding: 0 0 20px 0;
                                         margin: 0;
                                     }
                                     header {
                                         padding: 10px 0;
                                         width: 100%;
                                         background-color: #42403D;
-                                        height: 60px;
+                                        min-height: 60px;
                                     }
                                     h2:first-child {
                                         margin-top: 0;
@@ -78,6 +78,7 @@ module.exports =
                                     .content {
                                         max-width: 960px;
                                         margin: auto;
+                                        padding: 0 20px;
                                     }
                                     .header-content {
                                         color: white;
@@ -135,6 +136,14 @@ module.exports =
                                     ul {
                                         list-style-type:
                                     }
+                                    @media (max-width: 768px) {
+                                        .client-id {
+                                            display: none;
+                                        }
+                                        .permission {
+                                            display: none;
+                                        }
+                                    }
 
                                 </style>
                         </head>
@@ -185,10 +194,10 @@ your remote storage.
                         <table>
                         <thead>
                         <tr>
-                            <th>Client ID</th>
-                            <th>Application</th>
-                            <th>Permissions</th>
-                            <th>Revoke</th>
+                            <th class="client-id">Client ID</th>
+                            <th class="application">Application</th>
+                            <th class="permission">Permissions</th>
+                            <th class="revoke">Revoke</th>
                         </tr>
                         </thead>
                         #{perms}
