@@ -43,7 +43,6 @@ module.exports =
                                     color: #42403D;
                                 }
                                 #container {
-                                    position: absolute;
                                     margin: auto;
                                     margin-top: 20px;
                                     max-width: 500px;
@@ -55,7 +54,7 @@ module.exports =
                                     color: #42403D;
                                     display: block;
                                     width: 80%;
-                                    margin: auto
+                                    margin: auto;
                                     color: white;
                                     text-decoration: none;
                                     text-align: center;
@@ -71,7 +70,8 @@ module.exports =
                         </head>
                         <body>
                             <div id="container">
-                                <p>Do you want to allow Application <strong>#{clientId}</strong> at #{redirectUri} the following permissions?</p>
+                                <img src="icon.png" alt="Remote Storage Logo" />
+                                <p>Do you want to allow to the application <strong>#{clientId}</strong> at #{redirectUri} the following permissions on your Cozy Remote Storage?</p>
                                 <ul> #{perms} </ul>
                                 <a target="_top" href="#{redirectUri}#access_token=#{token}#{state}">Allow</a>
                             </div>
