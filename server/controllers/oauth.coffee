@@ -55,6 +55,7 @@ module.exports =
                                     display: block;
                                     width: 80%;
                                     margin: auto;
+                                    margin-top: 30px;
                                     color: white;
                                     text-decoration: none;
                                     text-align: center;
@@ -67,7 +68,6 @@ module.exports =
                                 img {
                                     float: left;
                                     margin-right: 20px;
-                                    margin-bottom: 20px;
                                 }
 
                                 p {
