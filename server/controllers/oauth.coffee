@@ -64,6 +64,14 @@ module.exports =
                                     background-color: #F84A04;
                                 }
 
+                                img {
+                                    float: left;
+                                    margin-right: 20px;
+                                }
+
+                                p {
+                                    margin-top: 0;
+                                }
 
                             </style>
 
