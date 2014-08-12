@@ -70,7 +70,7 @@ module.exports =
                         </head>
                         <body>
                             <div id="container">
-                                <img src="icon.png" alt="Remote Storage Logo" />
+                                <img src="../icon.png" alt="Remote Storage Logo" />
                                 <p>Do you want to allow to the application <strong>#{clientId}</strong> at #{redirectUri} the following permissions on your Cozy Remote Storage?</p>
                                 <ul> #{perms} </ul>
                                 <a target="_top" href="#{redirectUri}#access_token=#{token}#{state}">Allow</a>
