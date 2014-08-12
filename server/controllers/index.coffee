@@ -31,7 +31,7 @@ module.exports =
                             """<tr>
                             <td>#{perm.details.clientId}</td>
                             <td>
-                                <a class="use" target="_top" href="#{perm.details.redirectUri}">
+                                <a class="use" target="_blank" href="#{perm.details.redirectUri}">
                                 #{perm.details.redirectUri}
                                 </a>
                             </td>
@@ -160,13 +160,13 @@ Here is
 </p>
 <h2>How to use</h2>
 <p>
-Go on a website of a compatible application. Once there start using the service.
-Then paste your remote storage id in the box
+Go on the website of a compatible application. Once there, start using the service.
+Then, paste your remote storage id in the box
 floating on one corner of the application. The box looks like this:<br>
 <img src="remote.png" alt="Remote Storage stickers" />
 </p>
 <p>
-Then the application will require for an authorization. Once you will accept,
+The application will require for an authorization. Once you will accept,
 you will be able to use the application and persist data in your Cozy.
 </p>
 <h2>Application list</h2>
