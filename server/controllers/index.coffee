@@ -12,6 +12,7 @@ module.exports =
     index: (req, res, next) ->
 
         CozyInstance.first (err, instance) ->
+            instance ?= domain: "not.set"
             RemoteStoragePerm.all (err, perms) ->
                 return next err if err
 
@@ -28,10 +29,12 @@ module.exports =
                     redirectURI =
                         """<tr>
                         <td>#{perm.details.clientId}</td>
-                        <td>#{perm.details.redirectUri}</td>
-                        <td><ul>#{rights.join('')}</ul></td>
                         <td>
-                            <a class="use" target="_top" href="#{perm.details.redirectUri}">Run</a>
+                            <a class="use" target="_top" href="#{perm.details.redirectUri}">
+                            #{perm.details.redirectUri}
+                            </a>
+                        </td>
+                        <td><ul>#{rights.join('')}</ul></td>
 
                         </td><td>
                             <a class="delete" href="revoke?id=#{perm._id}">&times;</a>
@@ -41,24 +44,50 @@ module.exports =
                 html = """
                     <html>
                         <head>
+                            <link rel="shortcut icon" href="favicon.png">
                             <script>
                                 if(~window.location.hash.indexOf('oauth'))
                                     window.location = window.location.toString().replace('#oauth', 'oauth')
                             </script>
                             <style>
-                                    @font-face {
-                                        font-family: main;
-                                        src: url(/fonts/maven-pro-light-200.otf);
-                                    }
                                     body {
-                                        font-family: main;
+                                        font-family: "Helvetica Neue", Helvetica;
+                                        background: #E9E9E9;
+                                        padding: 0;
+                                        margin: 0;
                                     }
-                                    thead {
-                                        background-color: #54a6ff;
+                                    header {
+                                        padding: 10px;
+                                        width: 100%;
+                                        background-color: #42403D;
+                                        height: 60px;
+                                    }
+                                    .content {
+                                        max-width: 960px;
+                                        margin: auto;
+                                    }
+                                    .header-content {
                                         color: white;
                                     }
+                                    .header-content img {
+                                        width: 50px;
+                                        float: left;
+                                        margin-right: 20px;
+                                    }
+                                    .header-content p {
+                                        margin: 0;
+                                    }
+                                    thead {
+                                        background-color: #42403D;
+                                        font-weight: normal;
+                                        color: white;
+                                    }
+                                    table {
+                                        margin-top: 10px;
+                                        width: 100%;
+                                    }
                                     table, table td {
-                                        border: 1px solid #54a6ff;
+                                        border: 1px solid #42403D;
                                         border-collapse: collapse;
                                     }
                                     td, th {
@@ -86,21 +115,28 @@ module.exports =
                                 </style>
                         </head>
                         <body>
-                        <p>
-                        Your Remote Storage id is me@#{instance.domain}
+                        <header>
+                        <div class="header-content content">
+                            <img src="icon.png" alt="Remote Storage Logo" />
+                            <p>
+                            Your Remote Storage id is me@#{instance.domain}
+                            </p>
+                        </div>
                         </p>
+                        </header>
+                        <div class="content">
                         <table>
                         <thead>
                         <tr>
                             <th>Client ID</th>
-                            <th>Url</th>
+                            <th>Location</th>
                             <th>Permissions</th>
-                            <th>Use It</th>
                             <th>Revoke</th>
                         </tr>
                         </thead>
                         #{perms}
                         </table>
+                        </div>
                         </body>
                     </html>
                 """
