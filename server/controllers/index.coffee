@@ -93,22 +93,22 @@ module.exports =
                                     td, th {
                                         padding: 15px;
                                     }
-                                    a.use {
-                                        background-color: ;
+                                    a {
+                                        background-color: #F94819;
+                                        color: #42403D;
                                         color: white;
                                         text-decoration: none;
                                         display: inline-block;
                                         padding: 0.5em 0.5em;
                                     }
                                     a.delete {
-                                        font-weight: bold;
-                                        text-decoration: none;
+                                        color: #42403D;
                                     }
                                     a.use:hover {
                                         background-color: #E94809;
                                     }
                                     a.delete:hover {
-                                        background-color: #E94809;
+                                        color: #E94809;
                                     }
                                     ul {
                                         list-style-type:
