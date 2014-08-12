@@ -17,7 +17,7 @@ module.exports =
                 return next err if err
 
                 if perms.length > 0
-                    perms = perms.map (perm) ->
+                    perms = (perms.map (perm) ->
 
                         rights = perm.value.filter (scope) ->
                             scope.indexOf('public') isnt 1
@@ -40,6 +40,7 @@ module.exports =
                                 <a class="delete" href="revoke?id=#{perm._id}">revoke</a>
                             </td></tr>
                             """
+                    ).join ''
                 else
                     perms = "<tr><td><em>No application connected yet.</em></td></tr>"
 
@@ -120,7 +121,8 @@ module.exports =
                                         text-align: center;
                                     }
                                     a.use:hover {
-                                        background-color: #E94809;
+                                        background-color: #F84A04;
+                                        color: white;
                                     }
                                     a.delete:hover {
                                         color: #E94809;
