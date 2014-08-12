@@ -67,6 +67,7 @@ module.exports =
                                 img {
                                     float: left;
                                     margin-right: 20px;
+                                    margin-bottom: 20px;
                                 }
 
                                 p {
