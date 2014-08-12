@@ -16,30 +16,32 @@ module.exports =
             RemoteStoragePerm.all (err, perms) ->
                 return next err if err
 
-                perms = perms.map (perm) ->
+                if perms.length > 0
+                    perms = perms.map (perm) ->
 
-                    rights = perm.value.filter (scope) ->
-                        scope.indexOf('public') isnt 1
-                    .map (scope) ->
-                        [path, right] = scope.split ':'
-                        path = path.replace(/^\//, '').replace(/\/$/, '')
-                        return "<li>#{HUMANPERMISSIONS[right]} #{path} </li>"
+                        rights = perm.value.filter (scope) ->
+                            scope.indexOf('public') isnt 1
+                        .map (scope) ->
+                            [path, right] = scope.split ':'
+                            path = path.replace(/^\//, '').replace(/\/$/, '')
+                            return "<li>#{HUMANPERMISSIONS[right]} #{path} </li>"
 
 
-                    redirectURI =
-                        """<tr>
-                        <td>#{perm.details.clientId}</td>
-                        <td>
-                            <a class="use" target="_top" href="#{perm.details.redirectUri}">
-                            #{perm.details.redirectUri}
-                            </a>
-                        </td>
-                        <td><ul>#{rights.join('')}</ul></td>
-
-                        </td><td>
-                            <a class="delete" href="revoke?id=#{perm._id}">revoke</a>
-                        </td></tr>
-                        """
+                        redirectURI =
+                            """<tr>
+                            <td>#{perm.details.clientId}</td>
+                            <td>
+                                <a class="use" target="_top" href="#{perm.details.redirectUri}">
+                                #{perm.details.redirectUri}
+                                </a>
+                            </td>
+                            <td><ul>#{rights.join('')}</ul></td>
+                            <td class="revoke">
+                                <a class="delete" href="revoke?id=#{perm._id}">revoke</a>
+                            </td></tr>
+                            """
+                else
+                    perms = "<tr><td><em>No application connected yet.</em></td></tr>"
 
                 html = """
                     <html>
@@ -79,7 +81,7 @@ module.exports =
                                     }
                                     thead {
                                         background-color: #42403D;
-                                        font-weight: normal;
+                                        font-weight: light;
                                         color: white;
                                     }
                                     table {
@@ -94,7 +96,7 @@ module.exports =
                                         padding: 15px;
                                     }
                                     a.use {
-                                        background-color: #42403D;
+                                        background-color: #c4baab;
                                         color: #42403D;
                                         color: white;
                                         text-decoration: none;
@@ -104,6 +106,9 @@ module.exports =
                                     }
                                     a.delete {
                                         color: #42403D;
+                                    }
+                                    td.revoke {
+                                        text-align: center;
                                     }
                                     a.use:hover {
                                         background-color: #E94809;
@@ -128,11 +133,37 @@ module.exports =
                         </p>
                         </header>
                         <div class="content">
+                        <h2>What is Remote Storage</h2>
+                        <p>
+                        Remote Storage is a technology that allows web
+applications to let the user chose the location of their storage.
+That way, users can keep their data in a place of their own. To use that kind of
+web apps it requires you have a storage somewhere. This application allows your
+Cozy to store data as a Remote Storage.
+Here is
+<a href="https://unhosted.org/apps/">a list of compatible applications</a>.
+</p>
+<h2>How to use</h2>
+<p>
+Go on a website of a compatible application. Once there start using the service.
+Then paste your remote storage id in the box
+floating on one corner of the application. The box looks like this:<br>
+<img src="remote.png" alt="Remote Storage stickers" />
+</p>
+<p>
+Then the application will require for an authorization. Once you will accept,
+you will be able to use the application and persist data in your Cozy.
+</p>
+<h2>Application list</h2>
+<p>
+Below you will find the list of applications that you authorize to connect to
+your remote storage.
+</p>
                         <table>
                         <thead>
                         <tr>
                             <th>Client ID</th>
-                            <th>Location</th>
+                            <th>Application</th>
                             <th>Permissions</th>
                             <th>Revoke</th>
                         </tr>
