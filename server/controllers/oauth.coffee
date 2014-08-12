@@ -35,24 +35,34 @@ module.exports =
                     <html>
                         <head>
                             <style>
-                                #container{
+                                body {
+                                    font-family: "Helvetica Neue", Helvetica;
+                                    background: #FAFAFA;
+                                    padding: 0 0 20px 0;
+                                    margin: 0;
+                                    color: #42403D;
+                                }
+                                #container {
                                     position: absolute;
-                                    margin auto;
-                                    width: 500px;
-                                    border: 2px solid #54a6ff;
+                                    margin: auto;
+                                    margin-top: 20px;
+                                    max-width: 500px;
+                                    border: 2px solid #42403D;
                                     padding: 50px;
                                 }
-                                a{
+                                a {
+                                    background-color: #c4baab;
+                                    color: #42403D;
                                     display: block;
                                     width: 80%;
-                                    background-color: #54a6ff;
+                                    margin: auto
                                     color: white;
                                     text-decoration: none;
                                     text-align: center;
                                     padding: 10px;
                                 }
-                                a:hover{
-                                    background-color: orange;
+                                a:hover {
+                                    background-color: #F84A04;
                                 }
 
 
@@ -61,7 +71,7 @@ module.exports =
                         </head>
                         <body>
                             <div id="container">
-                                <p>Allow Application <strong>#{clientId}</strong> at #{redirectUri} the following permissions</p>
+                                <p>Do you want to allow Application <strong>#{clientId}</strong> at #{redirectUri} the following permissions?</p>
                                 <ul> #{perms} </ul>
                                 <a target="_top" href="#{redirectUri}#access_token=#{token}#{state}">Allow</a>
                             </div>
