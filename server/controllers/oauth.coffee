@@ -35,33 +35,52 @@ module.exports =
                     <html>
                         <head>
                             <style>
-                                #container{
-                                    position: absolute;
-                                    margin auto;
-                                    width: 500px;
-                                    border: 2px solid #54a6ff;
+                                body {
+                                    font-family: "Helvetica Neue", Helvetica;
+                                    background: #FAFAFA;
+                                    padding: 0 0 20px 0;
+                                    margin: 0;
+                                    color: #42403D;
+                                }
+                                #container {
+                                    margin: auto;
+                                    margin-top: 20px;
+                                    max-width: 500px;
+                                    border: 2px solid #42403D;
                                     padding: 50px;
                                 }
-                                a{
+                                a {
+                                    background-color: #c4baab;
+                                    color: #42403D;
                                     display: block;
                                     width: 80%;
-                                    background-color: #54a6ff;
+                                    margin: auto;
+                                    margin-top: 30px;
                                     color: white;
                                     text-decoration: none;
                                     text-align: center;
                                     padding: 10px;
                                 }
-                                a:hover{
-                                    background-color: orange;
+                                a:hover {
+                                    background-color: #F84A04;
                                 }
 
+                                img {
+                                    float: left;
+                                    margin-right: 20px;
+                                }
+
+                                p {
+                                    margin-top: 0;
+                                }
 
                             </style>
 
                         </head>
                         <body>
                             <div id="container">
-                                <p>Allow Application <strong>#{clientId}</strong> at #{redirectUri} the following permissions</p>
+                                <img src="../icon.png" alt="Remote Storage Logo" />
+                                <p>Do you want to allow to the application <strong>#{clientId}</strong> at #{redirectUri} the following permissions on your Cozy Remote Storage?</p>
                                 <ul> #{perms} </ul>
                                 <a target="_top" href="#{redirectUri}#access_token=#{token}#{state}">Allow</a>
                             </div>
