@@ -25,6 +25,5 @@
       "description": "Read your cozy's url to generate you remote storage id"
     }
   },
-  "cozy-displayName": "remotestorage",
-  "icon-path": "icon.png"
+  "cozy-displayName": "remotestorage"
 }
