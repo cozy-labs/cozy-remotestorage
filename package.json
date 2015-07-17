@@ -28,6 +28,6 @@
   "cozy-displayName": "remotestorage",
   "scripts": {
     "start": "coffee server.coffee"
-  },
+  }
   }
 }
